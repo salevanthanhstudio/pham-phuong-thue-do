@@ -1,0 +1,10 @@
+PHẠM PHƯỢNG — APP QUẢN LÝ THUÊ ĐỒ
+
+1. Mở index.html bằng Notepad.
+2. Tìm dòng SUPABASE_PUBLISHABLE_KEY. Thay DUY NHẤT giá trị DAN_PUBLISHABLE_KEY_CUA_ANH bằng khóa công khai bắt đầu sb_publishable_ của dự án. Giữ nguyên dấu ngoặc kép và các dòng khác. Ctrl+S.
+3. Supabase > SQL Editor: chạy database.sql để đặt policy cho người đã đăng nhập.
+4. Đưa index.html lên dịch vụ hosting tĩnh như Netlify hoặc Vercel; không chạy bằng file:// vì app dùng JavaScript module.
+5. Mở URL HTTPS, chọn Đăng ký lần đầu, tạo email/mật khẩu. Xác minh email nếu Supabase yêu cầu, rồi đăng nhập.
+
+Có sẵn: đăng nhập/đăng ký, khách hàng, kho đồ, đơn thuê, kiểm tra trùng lịch, thu chi, in phiếu.
+BẢO MẬT: Không bao giờ dùng Secret/service_role key trong trình duyệt. Policy hiện cho phép mọi tài khoản authenticated cùng truy cập chung dữ liệu; chỉ dùng khi tất cả tài khoản đều đáng tin. Cần phân quyền theo nhân viên/chủ tiệm thì phải bổ sung owner_id và policy riêng trước khi sử dụng thật.
